@@ -1,5 +1,10 @@
 <script lang="ts">
 	import { AppBar, AppShell } from '@skeletonlabs/skeleton';
+	import Sidebar from '$components/Sidebar/page.svelte';
+	import HtmlHead from '$src/routes/html_head.svelte';
+	import { isDark, isSideMenuOpen, closeSideMenu } from '$stores/menus';
+	import { keydownEscape } from '$lib/ioevents/keydown';
+	import { clickOutside } from '$lib/ioevents/click';
 
 	// Your selected Skeleton theme:
 	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
@@ -18,18 +23,25 @@
 	}
 </script>
 
+<HtmlHead {isDark} />
+
 <AppShell regionPage="relative" slotPageHeader="sticky top-0 z-10" on:scroll={scrollHandler}>
 	<svelte:fragment slot="pageHeader">
 		<AppBar>Skeleton</AppBar>
 	</svelte:fragment>
 	<svelte:fragment slot="sidebarLeft">
-		<div id="sidebar-left" class="hidden lg:block">Sidebar</div>
+		<div
+			id="sidebar-left"
+			class="hidden lg:block"
+			use:clickOutside={['nav-mobile-hamburger']}
+			on:click-outside={closeSideMenu}
+			use:keydownEscape
+			on:keydown-escape={closeSideMenu}
+		>
+			<Sidebar />
+		</div>
 	</svelte:fragment>
-	<!-- (sidebarRight) -->
-	<!-- (pageHeader) -->
-	<!-- Router Slot -->
+
 	<slot />
-	<!-- ---- / ---- -->
 	<svelte:fragment slot="pageFooter">Page Footer</svelte:fragment>
-	<!-- (footer) -->
 </AppShell>

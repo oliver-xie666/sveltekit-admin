@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@playwright/test': ^1.28.1
+  '@popperjs/core': ^2.11.7
   '@skeletonlabs/skeleton': ^1.5.1
   '@sveltejs/adapter-auto': ^2.0.0
   '@sveltejs/kit': ^1.5.0
@@ -23,6 +24,9 @@ specifiers:
   typescript: ^5.0.0
   vite: ^4.3.0
   vitest: ^0.25.3
+
+dependencies:
+  '@popperjs/core': registry.npmmirror.com/@popperjs/core/2.11.7
 
 devDependencies:
   '@playwright/test': registry.npmmirror.com/@playwright/test/1.33.0
@@ -462,6 +466,12 @@ packages:
     name: '@polka/url'
     version: 1.0.0-next.21
     dev: true
+
+  registry.npmmirror.com/@popperjs/core/2.11.7:
+    resolution: {integrity: sha512-Cr4OjIkipTtcXKjAsm8agyleBuDHvxzeBoa1v543lbv1YaIwQjESsVcmjiWiPEbC1FIeHOG/Op9kdCmAmiS3Kw==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@popperjs/core/-/core-2.11.7.tgz}
+    name: '@popperjs/core'
+    version: 2.11.7
+    dev: false
 
   registry.npmmirror.com/@skeletonlabs/skeleton/1.5.1:
     resolution: {integrity: sha512-b5D6vyUgE69XRbe9D3ImqJZHIRzEKwIa4HQik6LckjzgrfgUmTSeZXRdZeCuEVNI+6hdDcgTx4Brg9/8phcEeg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@skeletonlabs/skeleton/-/skeleton-1.5.1.tgz}
@@ -2743,7 +2753,7 @@ packages:
   registry.npmmirror.com/undici/5.22.0:
     resolution: {integrity: sha512-f6pTQ9RF4DQtwoWSaC42P/NKlUjvezVvd9r155ohqkwFNRyBKM3f3pcty3ouusefNRyM25XhIQEbeQ46sZDJfQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/undici/-/undici-5.21.2.tgz}
     name: undici
-    version: 5.21.2
+    version: 5.22.0
     engines: {node: '>=12.18'}
     deprecated: '[WARNING] Use 5.21.2 instead of 5.22.0, reason: https://github.com/nodejs/undici/pull/2091'
     dependencies:
