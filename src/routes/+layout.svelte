@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { AppBar, AppShell } from '@skeletonlabs/skeleton';
 	import Sidebar from '$components/Sidebar/page.svelte';
+	import Header from '$components/Header/page.svelte';
 	import HtmlHead from '$src/routes/html_head.svelte';
 	import { isDark, isSideMenuOpen, closeSideMenu } from '$stores/menus';
 	import { keydownEscape } from '$lib/ioevents/keydown';
@@ -18,16 +19,16 @@
 
 	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
 
-	function scrollHandler(event: UIEvent & { currentTarget: EventTarget & HTMLDivElement }) {
+	const scrollHandler = (event: UIEvent & { currentTarget: EventTarget & HTMLDivElement }) => {
 		console.log(event.currentTarget.scrollTop);
-	}
+	};
 </script>
 
 <HtmlHead {isDark} />
 
 <AppShell regionPage="relative" slotPageHeader="sticky top-0 z-10" on:scroll={scrollHandler}>
 	<svelte:fragment slot="pageHeader">
-		<AppBar>Skeleton</AppBar>
+		<Header />
 	</svelte:fragment>
 	<svelte:fragment slot="sidebarLeft">
 		<div
