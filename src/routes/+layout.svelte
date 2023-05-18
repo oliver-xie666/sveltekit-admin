@@ -1,5 +1,12 @@
 <script lang="ts">
-	import { AppBar, AppShell } from '@skeletonlabs/skeleton';
+	import { AppBar, AppShell, storeHighlightJs } from '@skeletonlabs/skeleton';
+	import Sidebar from '$components/Sidebar/page.svelte';
+	import Header from '$components/Header/page.svelte';
+	import { closeSideMenu } from '$stores/menus';
+	import { keydownEscape } from '$lib/ioevents/keydown';
+	import { clickOutside } from '$lib/ioevents/click';
+	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
+	import hljs from 'highlight.js';
 
 	// Your selected Skeleton theme:
 	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
@@ -13,23 +20,37 @@
 
 	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
 
-	function scrollHandler(event: UIEvent & { currentTarget: EventTarget & HTMLDivElement }) {
+	import 'highlight.js/styles/github-dark.css';
+
+	storeHighlightJs.set(hljs);
+
+	const scrollHandler = (event: UIEvent & { currentTarget: EventTarget & HTMLDivElement }) => {
 		console.log(event.currentTarget.scrollTop);
-	}
+	};
 </script>
 
-<AppShell regionPage="relative" slotPageHeader="sticky top-0 z-10" on:scroll={scrollHandler}>
+<AppShell
+	regionPage="relative"
+	slotPageHeader="sticky top-0 z-10"
+	on:scroll={scrollHandler}
+	class="overflow-hidden"
+>
 	<svelte:fragment slot="pageHeader">
-		<AppBar>Skeleton</AppBar>
+		<Header />
 	</svelte:fragment>
 	<svelte:fragment slot="sidebarLeft">
-		<div id="sidebar-left" class="hidden lg:block">Sidebar</div>
+		<div
+			id="sidebar-left"
+			class="hidden lg:block"
+			use:clickOutside={['nav-mobile-hamburger']}
+			on:click-outside={closeSideMenu}
+			use:keydownEscape
+			on:keydown-escape={closeSideMenu}
+		>
+			<Sidebar />
+		</div>
 	</svelte:fragment>
-	<!-- (sidebarRight) -->
-	<!-- (pageHeader) -->
-	<!-- Router Slot -->
+
 	<slot />
-	<!-- ---- / ---- -->
-	<svelte:fragment slot="pageFooter">Page Footer</svelte:fragment>
-	<!-- (footer) -->
+	<!-- <svelte:fragment slot="pageFooter">Page Footer</svelte:fragment> -->
 </AppShell>
