@@ -64,9 +64,8 @@
 			url: '/pages',
 			icon: 'fa-page',
 			sublinks: [
-				{ name: 'Login', url: import.meta.env.VITE_LOGIN_PATH },
+				{ name: 'Login', url: '/login' },
 				{ name: 'Register', url: '/register' },
-				{ name: 'Forgot Password', url: '/forgot-password' },
 				{ name: '404', url: '/this-page-does-not-exists-at-all' }
 			]
 		}
