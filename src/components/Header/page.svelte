@@ -1,15 +1,33 @@
 <script lang="ts">
 	import { toggleProfileMenu, closeProfileMenu, isProfileMenuOpen } from '$stores/menus';
-	import { AppBar, Avatar, ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
+	import { AppBar, Avatar, LightSwitch, popup } from '@skeletonlabs/skeleton';
 	import { clickOutside } from '$lib/ioevents/click';
 	import { keydownEscape } from '$lib/ioevents/keydown';
 </script>
 
-<AppBar gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
+<AppBar
+	gridColumns="grid-cols-3"
+	slotDefault="place-self-center"
+	slotTrail="place-content-end"
+	shadow="shadow-l"
+>
 	<svelte:fragment slot="lead"><i class="fa-solid fa-bars text-xl" /></svelte:fragment>
 	<svelte:fragment slot="trail">
-		<i class="fa-solid fa-moon fa-xl" />
-		<i class="fa-solid fa-sun fa-xl" />
+		<!-- Theme -->
+		<section class="flex justify-between items-center">
+			<LightSwitch />
+		</section>
+
+		<section class="hidden sm:inline-flex space-x-4">
+			<a
+				class="btn-icon btn-icon-sm hover:variant-soft-primary"
+				href="https://github.com/oliver-xie666?tab=repositories"
+				target="_blank"
+				rel="noreferrer"
+			>
+				<i class="fa-brands fa-github text-lg fa-xl" />
+			</a>
+		</section>
 		<div class="relative inline-block">
 			<span class="badge-icon variant-filled-error absolute -top-0 right-0.5 z-10 w-2 h-2" />
 			<i class="fa-solid fa-bell fa-xl" />

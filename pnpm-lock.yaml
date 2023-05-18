@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@faker-js/faker': ^8.0.1
+  '@floating-ui/dom': ^1.2.8
   '@playwright/test': ^1.28.1
   '@popperjs/core': ^2.11.7
   '@skeletonlabs/skeleton': ^1.5.1
@@ -15,6 +16,7 @@ specifiers:
   eslint: ^8.28.0
   eslint-config-prettier: ^8.5.0
   eslint-plugin-svelte: ^2.26.0
+  esm-env: ^1.0.0
   highlight.js: ^11.8.0
   postcss: ^8.4.23
   postcss-load-config: ^4.0.1
@@ -32,8 +34,10 @@ specifiers:
 
 dependencies:
   '@faker-js/faker': registry.npmmirror.com/@faker-js/faker/8.0.1
+  '@floating-ui/dom': registry.npmmirror.com/@floating-ui/dom/1.2.8
   '@popperjs/core': registry.npmmirror.com/@popperjs/core/2.11.7
   chart.js: registry.npmmirror.com/chart.js/4.3.0
+  esm-env: registry.npmmirror.com/esm-env/1.0.0
   highlight.js: registry.npmmirror.com/highlight.js/11.8.0
   svelte-chartjs: registry.npmmirror.com/svelte-chartjs/3.1.2_4llyvsyqmzf26sjsxbn6u5pla4
 
@@ -364,6 +368,20 @@ packages:
     name: '@faker-js/faker'
     version: 8.0.1
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0, npm: '>=6.14.13'}
+    dev: false
+
+  registry.npmmirror.com/@floating-ui/core/1.2.6:
+    resolution: {integrity: sha512-EvYTiXet5XqweYGClEmpu3BoxmsQ4hkj3QaYA6qEnigCWffTP3vNRwBReTdrwDwo7OoJ3wM8Uoe9Uk4n+d4hfg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@floating-ui/core/-/core-1.2.6.tgz}
+    name: '@floating-ui/core'
+    version: 1.2.6
+    dev: false
+
+  registry.npmmirror.com/@floating-ui/dom/1.2.8:
+    resolution: {integrity: sha512-XLwhYV90MxiHDq6S0rzFZj00fnDM+A1R9jhSioZoMsa7G0Q0i+Q4x40ajR8FHSdYDE1bgjG45mIWe6jtv9UPmg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@floating-ui/dom/-/dom-1.2.8.tgz}
+    name: '@floating-ui/dom'
+    version: 1.2.8
+    dependencies:
+      '@floating-ui/core': registry.npmmirror.com/@floating-ui/core/1.2.6
     dev: false
 
   registry.npmmirror.com/@humanwhocodes/config-array/0.11.8:
@@ -1340,7 +1358,6 @@ packages:
     resolution: {integrity: sha512-Cf6VksWPsTuW01vU9Mk/3vRue91Zevka5SjyNf3nEpokFRuqt/KjUQoGAwq9qMmhpLTHmXzSIrFRw8zxWzmFBA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/esm-env/-/esm-env-1.0.0.tgz}
     name: esm-env
     version: 1.0.0
-    dev: true
 
   registry.npmmirror.com/espree/9.5.2:
     resolution: {integrity: sha512-7OASN1Wma5fum5SrNhFMAMJxOUAbhyfQ8dQ//PJaJbNw0URTPWqIghHWt1MmAANKhHZIYOHruW4Kw4ruUWOdGw==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/espree/-/espree-9.5.2.tgz}

@@ -322,7 +322,7 @@
 								<button class="input-group-shim">+</button>
 								<textarea
 									bind:value={currentMessage}
-									class="bg-transparent border-0 ring-0 h-8"
+									class="bg-transparent border-0 ring-0"
 									name="prompt"
 									id="prompt"
 									placeholder="Write a message..."
@@ -378,11 +378,11 @@
 
 		<!-- Charts -->
 		<h3 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">Charts</h3>
-		<div class="grid gap-6 mb-8 md:grid-cols-2 card">
-			<div class="min-w-0 p-4 rounded-lg shadow-xs dark:bg-gray-800">
+		<div class="grid gap-6 mb-8 md:grid-cols-2">
+			<div class="min-w-0 p-4 rounded-lg shadow-xs dark:bg-gray-800 card">
 				<Line data={lineData} options={{ responsive: true }} />
 			</div>
-			<div class="min-w-0 p-4 rounded-lg shadow-xs dark:bg-gray-800">
+			<div class="min-w-0 p-4 rounded-lg shadow-xs dark:bg-gray-800 card">
 				<Bar data={barData} options={{ responsive: true }} />
 			</div>
 		</div>

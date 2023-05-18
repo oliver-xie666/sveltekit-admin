@@ -2,9 +2,10 @@
 	import { AppBar, AppShell, storeHighlightJs } from '@skeletonlabs/skeleton';
 	import Sidebar from '$components/Sidebar/page.svelte';
 	import Header from '$components/Header/page.svelte';
-	import { isDark, isSideMenuOpen, closeSideMenu } from '$stores/menus';
+	import { closeSideMenu } from '$stores/menus';
 	import { keydownEscape } from '$lib/ioevents/keydown';
 	import { clickOutside } from '$lib/ioevents/click';
+	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
 	import hljs from 'highlight.js';
 
 	// Your selected Skeleton theme:

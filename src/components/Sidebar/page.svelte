@@ -36,17 +36,17 @@
 		{
 			name: 'Forms',
 			url: '/forms',
-			icon: 'fa-table'
+			icon: 'fa-list'
 		},
 		{
 			name: 'Cards',
 			url: '/cards',
-			icon: 'fa-table'
+			icon: 'fa-magnet'
 		},
 		{
 			name: 'Charts',
 			url: '/charts',
-			icon: 'fa-table'
+			icon: 'fa-hashtag'
 		},
 		{
 			name: 'Buttons',
@@ -56,13 +56,13 @@
 		{
 			name: 'Codes',
 			url: '/codes',
-			icon: 'fa-comment-dots'
+			icon: 'fa-code'
 		},
 		{ name: 'Tables', url: '/tables', icon: ' fa-table' },
 		{
 			name: 'Pages',
 			url: '/pages',
-			icon: 'fa-page',
+			icon: 'fa-folder',
 			sublinks: [
 				{ name: 'Login', url: '/login' },
 				{ name: 'Register', url: '/register' },
@@ -129,8 +129,14 @@
 						>
 							{#each link.sublinks as sublink, c}
 								<li
-									class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+									class="relative px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
 								>
+									{#if isMainLink(sublink)}
+										<span
+											class="absolute inset-y-0 left-0 w-1 variant-filled-primary rounded-tr-lg rounded-br-lg"
+											aria-hidden="true"
+										/>
+									{/if}
 									<a class="w-full" href={sublink.url}>{sublink.name}</a>
 								</li>
 							{/each}
