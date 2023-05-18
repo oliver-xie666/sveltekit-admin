@@ -54,8 +54,8 @@
 			icon: 'fa-arrow-pointer'
 		},
 		{
-			name: 'Modals',
-			url: '/modals',
+			name: 'Codes',
+			url: '/codes',
 			icon: 'fa-comment-dots'
 		},
 		{ name: 'Tables', url: '/tables', icon: ' fa-table' },

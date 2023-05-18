@@ -1,10 +1,11 @@
 <script lang="ts">
-	import { AppBar, AppShell } from '@skeletonlabs/skeleton';
+	import { AppBar, AppShell, storeHighlightJs } from '@skeletonlabs/skeleton';
 	import Sidebar from '$components/Sidebar/page.svelte';
 	import Header from '$components/Header/page.svelte';
 	import { isDark, isSideMenuOpen, closeSideMenu } from '$stores/menus';
 	import { keydownEscape } from '$lib/ioevents/keydown';
 	import { clickOutside } from '$lib/ioevents/click';
+	import hljs from 'highlight.js';
 
 	// Your selected Skeleton theme:
 	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
@@ -17,6 +18,10 @@
 	import '../app.postcss';
 
 	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
+
+	import 'highlight.js/styles/github-dark.css';
+
+	storeHighlightJs.set(hljs);
 
 	const scrollHandler = (event: UIEvent & { currentTarget: EventTarget & HTMLDivElement }) => {
 		console.log(event.currentTarget.scrollTop);

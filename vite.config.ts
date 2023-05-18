@@ -12,6 +12,7 @@ export default defineConfig({
 			$src: resolve('./src'),
 			$components: resolve('./src/components'),
 			$lib: resolve('./src/lib'),
+			$docs: resolve('./src/docs'),
 			$stores: resolve('./src/stores'),
 			$assets: resolve('./src/assets'),
 			$icon: resolve('./node_modules/svelte-bootstrap-icons/lib')
