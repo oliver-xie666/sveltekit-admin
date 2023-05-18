@@ -1,8 +1,15 @@
 <script lang="ts">
-	import { toggleProfileMenu, closeProfileMenu, isProfileMenuOpen } from '$stores/menus';
+	import {
+		toggleProfileMenu,
+		closeProfileMenu,
+		isProfileMenuOpen,
+		toggleSideMenu
+	} from '$stores/menus';
 	import { AppBar, Avatar, LightSwitch, popup } from '@skeletonlabs/skeleton';
 	import { clickOutside } from '$lib/ioevents/click';
 	import { keydownEscape } from '$lib/ioevents/keydown';
+
+	const toggleMenu = () => toggleSideMenu();
 </script>
 
 <AppBar
@@ -11,7 +18,9 @@
 	slotTrail="place-content-end"
 	shadow="shadow-l"
 >
-	<svelte:fragment slot="lead"><i class="fa-solid fa-bars text-xl" /></svelte:fragment>
+	<svelte:fragment slot="lead">
+		<button on:click|stopPropagation={toggleMenu}><i class="fa-solid fa-bars text-xl" /></button>
+	</svelte:fragment>
 	<svelte:fragment slot="trail">
 		<!-- Theme -->
 		<section class="flex justify-between items-center">
