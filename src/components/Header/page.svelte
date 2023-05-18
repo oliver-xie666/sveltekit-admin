@@ -6,8 +6,7 @@
 </script>
 
 <AppBar gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
-	<svelte:fragment slot="lead"><i class="fa-solid fa-bars text-2xl" /></svelte:fragment>
-	Title
+	<svelte:fragment slot="lead"><i class="fa-solid fa-bars text-xl" /></svelte:fragment>
 	<svelte:fragment slot="trail">
 		<i class="fa-solid fa-moon fa-xl" />
 		<i class="fa-solid fa-sun fa-xl" />
@@ -25,7 +24,7 @@
 				<Avatar
 					src="https://source.unsplash.com/YOErFW8AfkI/128x128"
 					rounded="rounded-full"
-					width="w-10"
+					width="w-9"
 				/>
 			</div>
 			{#if $isProfileMenuOpen}

@@ -2,7 +2,6 @@
 	import { AppBar, AppShell } from '@skeletonlabs/skeleton';
 	import Sidebar from '$components/Sidebar/page.svelte';
 	import Header from '$components/Header/page.svelte';
-	import HtmlHead from '$src/routes/html_head.svelte';
 	import { isDark, isSideMenuOpen, closeSideMenu } from '$stores/menus';
 	import { keydownEscape } from '$lib/ioevents/keydown';
 	import { clickOutside } from '$lib/ioevents/click';
@@ -24,9 +23,12 @@
 	};
 </script>
 
-<HtmlHead {isDark} />
-
-<AppShell regionPage="relative" slotPageHeader="sticky top-0 z-10" on:scroll={scrollHandler}>
+<AppShell
+	regionPage="relative"
+	slotPageHeader="sticky top-0 z-10"
+	on:scroll={scrollHandler}
+	class="overflow-hidden"
+>
 	<svelte:fragment slot="pageHeader">
 		<Header />
 	</svelte:fragment>
@@ -44,5 +46,5 @@
 	</svelte:fragment>
 
 	<slot />
-	<svelte:fragment slot="pageFooter">Page Footer</svelte:fragment>
+	<!-- <svelte:fragment slot="pageFooter">Page Footer</svelte:fragment> -->
 </AppShell>

@@ -73,7 +73,7 @@
 	];
 </script>
 
-<div class="py-4 text-gray-500 dark:text-gray-400">
+<div class="py-4 text-gray-500 dark:text-gray-400 w-64 bg-surface-100-800-token h-screen">
 	{#if withTitle}
 		<a class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200" href="/">{appName}</a>
 	{/if}
@@ -82,7 +82,7 @@
 			<li class="relative px-6 py-3">
 				{#if isMainLink(link)}
 					<span
-						class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+						class="absolute inset-y-0 left-0 w-1 variant-filled-primary rounded-tr-lg rounded-br-lg"
 						aria-hidden="true"
 					/>
 				{/if}

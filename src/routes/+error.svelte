@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { isDark } from '$stores/menus';
 	import { browser } from '$app/environment';
-	import HtmlHead from './html_head.svelte';
 
 	if (browser && localStorage.theme === 'dark') {
 		isDark.update((v) => true);
@@ -9,8 +8,6 @@
 		isDark.update((v) => false);
 	}
 </script>
-
-<HtmlHead {isDark} />
 
 <main class="h-full pb-16 overflow-y-auto">
 	<div class="container flex flex-col items-center px-6 mx-auto">
