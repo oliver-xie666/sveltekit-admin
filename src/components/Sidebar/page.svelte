@@ -3,7 +3,8 @@
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 
-	const appName = import.meta.env.VITE_APP_NAME;
+	// const appName = import.meta.env.VITE_APP_NAME;
+	const appName = 'Svelte Admin';
 
 	$: changeLink = (link: any) => {
 		goto(link.url);
