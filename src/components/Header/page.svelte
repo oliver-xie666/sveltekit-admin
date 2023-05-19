@@ -19,7 +19,9 @@
 	shadow="shadow-l"
 >
 	<svelte:fragment slot="lead">
-		<button on:click|stopPropagation={toggleMenu}><i class="fa-solid fa-bars text-xl" /></button>
+		<button on:click|stopPropagation|preventDefault={toggleMenu}
+			><i class="fa-solid fa-bars text-xl" /></button
+		>
 	</svelte:fragment>
 	<svelte:fragment slot="trail">
 		<!-- Theme -->
@@ -30,7 +32,7 @@
 		<section class="hidden sm:inline-flex space-x-4">
 			<a
 				class="btn-icon btn-icon-sm hover:variant-soft-primary"
-				href="https://github.com/oliver-xie666?tab=repositories"
+				href="https://github.com/oliver-xie666/svelte-admin"
 				target="_blank"
 				rel="noreferrer"
 			>
