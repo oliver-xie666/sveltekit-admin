@@ -8,8 +8,18 @@
 		<link href="/font-awesome/css/brands.min.css" rel="stylesheet" />
 		<link href="/font-awesome/css/solid.min.css" rel="stylesheet" />
 		%sveltekit.head%
+		<style>
+			html,
+			body {
+				overflow: hidden;
+			}
+			#page-content {
+				overflow: auto;
+				height: 90vh;
+			}
+		</style>
 	</head>
 	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents" class="h-full overflow-hidden">%sveltekit.body%</div>
+		<div style="display: contents" class="h-full">%sveltekit.body%</div>
 	</body>
 </html>

@@ -1,12 +1,11 @@
 <script lang="ts">
-	import { closeSideMenu, isSideMenuOpen, pageMenus, togglePageMenu } from '$stores/menus';
+	import { isSideMenuOpen, pageMenus, togglePageMenu } from '$stores/menus';
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 
 	const appName = import.meta.env.VITE_APP_NAME;
 
 	$: changeLink = (link: any) => {
-		closeSideMenu();
 		goto(link.url);
 	};
 

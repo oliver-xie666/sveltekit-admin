@@ -23,18 +23,9 @@
 	import 'highlight.js/styles/github-dark.css';
 
 	storeHighlightJs.set(hljs);
-
-	const scrollHandler = (event: UIEvent & { currentTarget: EventTarget & HTMLDivElement }) => {
-		console.log(event.currentTarget.scrollTop);
-	};
 </script>
 
-<AppShell
-	regionPage="relative"
-	slotPageHeader="sticky top-0 z-10"
-	on:scroll={scrollHandler}
-	class="overflow-hidden"
->
+<AppShell regionPage="relative" slotPageHeader="sticky top-0 z-10" class="overflow-hidden">
 	<svelte:fragment slot="pageHeader">
 		<Header />
 	</svelte:fragment>
@@ -43,9 +34,7 @@
 			id="sidebar-left"
 			class="hidden lg:block"
 			use:clickOutside={['nav-mobile-hamburger']}
-			on:click-outside={closeSideMenu}
 			use:keydownEscape
-			on:keydown-escape={closeSideMenu}
 		>
 			<Sidebar />
 		</div>
